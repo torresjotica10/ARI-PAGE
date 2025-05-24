@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tu verdadero regalo</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #fff8f5;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .box {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #3a2b1d;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #5e4632;
+      margin-bottom: 20px;
+    }
+
+    video {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: 320px; /* Limita altura del video */
+      border-radius: 20px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+      margin-bottom: 30px;
+    }
+
+    .closing-message {
+      font-size: 17px;
+      color: #3e2b1f;
+      margin-top: 40px;
+      font-style: italic;
+    }
+
+    .spacer {
+      height: 300px; /* Esto fuerza scroll real */
+    }
+
+    @media screen and (max-width: 600px) {
+      h2 {
+        font-size: 20px;
+      }
+
+      p, .closing-message {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <h2>Este sí es tu verdadero regalo 🎁</h2>
+      <p>Reproduce este video... porque tengo algo muy importante que contarte ❤️</p>
+      
+      <video controls volume="1.0">
+        <source src="video-regalo.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+
+      <p class="closing-message">
+        Gracias por ser tú, por cada sonrisa, por cada segundo. Esto está hecho con todo mi amor ❤️
+      </p>
+    </div>
+
+    <!-- Forzar espacio para activar scroll -->
+    <div class="spacer"></div>
+  </div>
+</body>
+</html>

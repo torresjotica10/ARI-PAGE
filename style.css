@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    background-color: #f5ebe0;
+  }
+  
+  /* Secciones */
+  .section {
+    height: 100vh;
+    width: 100%;
+    color: #4e342e;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  .section.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Botones */
+  .buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .btn {
+    background-color: #4e342e;
+    color: #f5ebe0;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #3e2723;
+  }
+  
+  /* Imagen del evento */
+  .foto-evento {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    animation: zoomInFade 1.5s ease-in-out;
+    animation-fill-mode: both;
+  }
+  
+  /* Animación zoom de la foto */
+  @keyframes zoomInFade {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Animación de entrada para títulos */
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    80% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  h1, h2 {
+    animation: bounceIn 1s ease;
+    color: #4e342e;
+  }
+  
+  /* Corazones en los textos siempre marrón */
+  .brown-heart {
+    color: #4e342e;
+  }
+  
+  /* Corazones flotantes (marrón oscuro hechos con CSS) */
+  #hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .heart-shape {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #4e342e;
+    opacity: 0.7;
+    animation: float 8s infinite ease-in-out;
+    transform: rotate(45deg);
+  }
+  
+  .heart-shape::before,
+  .heart-shape::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #4e342e;
+    border-radius: 50%;
+  }
+  
+  .heart-shape::before {
+    top: -10px;
+    left: 0;
+  }
+  
+  .heart-shape::after {
+    left: -10px;
+    top: 0;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0) rotate(45deg);
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-150px) rotate(45deg);
+      opacity: 0.7;
+    }
+  }
+  
+  /* Estrellitas flotantes (marrón oscuro y más grandes) */
+  #stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .star {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #4e342e;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: floatStar 8s infinite ease-in-out;
+  }
+  
+  @keyframes floatStar {
+    0% {
+      transform: translateY(0);
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-150px);
+      opacity: 0.5;
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 800px) {
+    h1, h2 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1.1em;
+    }
+    .foto-evento {
+      width: 80%;
+    }
+  }
+  .foto-evento {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    border-radius: 20px;
+    margin: 20px auto;
+    display: block;
+    object-fit: contain;
+  }
+  
